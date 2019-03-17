@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<canvas id="myCanvas" width="600" height="400" style="border: :1px solid #000000">
+</canvas>
+<body>
+<script>
+
+    let Rectangle = function (a, b) {
+        this.width = a;
+        this.height = b;
+
+        this.areaRectangle = function () {
+            return this.width * this.height;
+        };
+        this.perimeterRectangle = function () {
+            return (this.width + this.height) * 2;
+        };
+        this.creatRectangle = function () {
+            let ctx = document.getElementById("myCanvas").getContext("2d");
+            let x = Math.floor((Math.random() * 300) + 1);
+            let y = Math.floor((Math.random() * 300) + 1);
+            ctx.fillStyle = "#FF0000";
+            ctx.fillRect(x, y, a, b);
+        };
+    };
+    let a = parseFloat(prompt("Enter X here :"));
+    let b = parseFloat(prompt("Enter Y here: "));
+    let rectangle1 = new Rectangle(a, b);
+    rectangle1.creatRectangle();
+    console.log(rectangle1.areaRectangle());
+    console.log(rectangle1.perimeterRectangle());
+
+</script>
+</body>
+</html>
